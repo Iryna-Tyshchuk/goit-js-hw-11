@@ -10,21 +10,24 @@
   <body>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <!-- <include src="./partials/example.html"></include> -->
-
-    <form class="search-form" id="search-form">
-      <input
-        type="text"
-        name="searchQuery"
-        autocomplete="off"
-        placeholder="Search images..."
-      />
-      <button type="submit" class="search-btn">Search</button>
-    </form>
-    <div class="gallery">
-      <!-- Картки зображень -->
-    </div>
-    <button type="button" class="load-more js-load-more is-hidden">
-      Load more
-    </button>
+    <section class="gallery-section">
+      <div class="container">
+        <form class="search-form" id="search-form">
+          <input
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search images..."
+          />
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+        <div class="gallery">
+          <!-- Картки зображень -->
+        </div>
+        <button type="button" class="load-more js-load-more is-hidden">
+          Load more
+        </button>
+      </div>
+    </section>
   </body>
 </html>
