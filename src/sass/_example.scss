@@ -17,6 +17,13 @@
   border: 1px solid #440909;
 }
 
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+}
 .search-btn,
 .load-more {
   font-size: 14px;
@@ -25,8 +32,7 @@
   color: #ffffff;
   border: none;
   text-transform: uppercase;
-  cursor: pointer;
-  margin-left: 10px;
+
   transition: background-color 250ms linear;
 }
 
