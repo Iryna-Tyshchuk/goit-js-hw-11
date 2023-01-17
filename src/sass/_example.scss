@@ -1,28 +1,78 @@
-.example {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  background-color: #fff;
-  color: #2f2f37;
-  max-width: 960px;
-  padding: 16px;
+.gallery-section {
+  padding: 60px 0;
 }
 
-.example code {
-  font-family: monospace;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #ff6b0a;
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 2px;
+.search-form {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
-.example .background {
-  height: 240px;
-  // ❗️❗️❗️ The path to images from a SASS file
-  // is always the same as from the css folder.
-  background-image: url('../images/logo.png');
-  background-size: cover;
-  background-position: center;
+.search-input {
+  height: 40px;
+  flex-grow: 1;
+  font-size: 18px;
+  padding-left: 15px;
+  border: 1px solid #440909;
+}
+
+.search-btn,
+.load-more {
+  font-size: 14px;
+  padding: 10px 20px;
+  background-color: #2e31cc;
+  color: #ffffff;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 250ms linear;
+}
+
+.load-more {
+  display: block;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.load-more.is-hidden {
+  display: none;
+}
+
+.search-btn:hover,
+.search-btn:focus,
+.load-more:hover,
+.load-more:focus {
+  background-color: #1807b1;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.photo-card {
+  flex-basis: calc((100% - 150px) / 3);
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  object-fit: cover;
+}
+
+.disabled,
+.disabled:hover {
+  background-color: #cccccc;
+  color: #303030;
+  opacity: 0.8;
+}
+
+.info {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
 }

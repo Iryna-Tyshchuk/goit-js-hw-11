@@ -11,12 +11,12 @@ export class PixabayAPI {
     this.query = null;
   }
 
-  fetchPhotosByQuery() {
+  async fetchPhotosByQuery() {
     const searchParams = {
       params: {
         q: this.query,
         page: this.page,
-        per_page: 20,
+        per_page: 40,
         orientation: 'horizontal',
         image_type: 'photo',
         key: PixabayAPI.API_KEY,
@@ -24,6 +24,7 @@ export class PixabayAPI {
       },
     };
 
-    return axios.get(`${PixabayAPI.BASE_URL}`, searchParams);
+    const { data } = await axios.get(`${PixabayAPI.BASE_URL}`, searchParams);
+    return data;
   }
 }

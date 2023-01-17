@@ -1,23 +1,35 @@
-export const createGalleryCards = cardInfo => {
+'use strict';
+export function createGalleryCards(cardInfo) {
   const galleryCardsArr = cardInfo.map(el => {
+    const {
+      webformatURL,
+      largeImageURL,
+      tags,
+      likes,
+      views,
+      comments,
+      downloads,
+    } = el;
     return ` <div class="photo-card">
-      <img src="${el.webformatURL}" alt="${el.tags}" loading="lazy" />
+      <a href="${largeImageURL}">
+      <img class="gallery-img" src="${webformatURL}" alt="${tags}" loading="lazy" />
+      </a>
       <div class="info">
         <p class="info-item">
-          <b>Likes</b> ${el.likes}
+          <b>Likes</b> ${likes}
         </p>
         <p class="info-item">
-          <b>Views</b> ${el.views}
+          <b>Views</b> ${views}
         </p>
         <p class="info-item">
-          <b>Comments</b> ${el.comments}
+          <b>Comments</b> ${comments}
         </p>
         <p class="info-item">
-          <b>Downloads</b> ${el.downloads}
+          <b>Downloads</b> ${downloads}
         </p>
       </div>
     </div>`;
   });
 
   return galleryCardsArr.join('');
-};
+}
