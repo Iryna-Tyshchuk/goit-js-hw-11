@@ -8,6 +8,7 @@ const searchFormEl = document.querySelector('.search-form');
 const galleryListEl = document.querySelector('.gallery');
 const loadMoreBtnEl = document.querySelector('.load-more');
 const searchBtnEl = document.querySelector('.search-btn');
+const perPage = 40;
 
 const pixabayAPI = new PixabayAPI();
 
@@ -21,6 +22,13 @@ const onSearchFormSubmit = async event => {
 
   pixabayAPI.query = event.target.elements.searchQuery.value;
   pixabayAPI.page = 1;
+
+  if (pixabayAPI.query === '') {
+    Notiflix.Notify.failure(
+      'The search string cannot be empty. Please specify your search query.'
+    );
+    return;
+  }
 
   try {
     const { hits, total, totalHits } = await pixabayAPI.fetchPhotosByQuery();
@@ -39,7 +47,7 @@ const onSearchFormSubmit = async event => {
       return;
     }
 
-    if (totalHits > 40) {
+    if (totalHits > perPage) {
       loadMoreBtnEl.classList.remove('is-hidden');
     }
 
@@ -65,8 +73,11 @@ const onLoadMoreBtnClick = async event => {
 
     galleryListEl.insertAdjacentHTML('beforeend', createGalleryCards(hits));
 
-    if (totalHits / 40 === pixabayAPI.page) {
+    if (Math.ceil(totalHits / perPage) === pixabayAPI.page) {
       loadMoreBtnEl.classList.add('is-hidden');
+      Notiflix.Notify.failure(
+        "We're sorry, but you've reached the end of search results."
+      );
     }
 
     gallery.refresh();

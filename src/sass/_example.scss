@@ -4,7 +4,7 @@
 
 .search-form {
   display: flex;
-  width: 600px;
+  // width: 600px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -15,6 +15,7 @@
   font-size: 18px;
   padding-left: 15px;
   border: 1px solid #440909;
+  border-radius: 6px;
 }
 
 .btn {
@@ -34,6 +35,10 @@
   text-transform: uppercase;
 
   transition: background-color 250ms linear;
+}
+
+.search-btn {
+  margin-left: 10px;
 }
 
 .load-more {
